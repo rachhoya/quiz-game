@@ -1,0 +1,10 @@
+What is the capital city of the Netherlands?,Amsterdam,London,Rotterdam,Paris,Amsterdam
+What country has the largest population?,India,China,United States,Indonesia,India
+What is the largest mammal on Earth?,Blue Whale,Elephant,Bison,Polar Bear,Moose,Blue Whale
+What is the longest river on Earth?,The Nile,Congo,Amazon river,Mississippi river,The Nile
+What is the largest country?,Russia,China,United States,Canada,Russia
+How many continents are in the world?6,8,7,5,7
+What is the largest planet?,Jupiter,Venus,Mars,Neptune,Jupiter
+How bones does an adult have?210,206,270,240,206
+What year did the Titanic sink?,1918,1910,1912,1915,1912
+What is the smallest country in the world?,Maldives,Mauritius,Vatican City,Monaco,Vatican City

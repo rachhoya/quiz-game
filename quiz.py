@@ -26,7 +26,7 @@ def draw():
         screen.draw.text("Game Over\n score:{}/10".format(score),center=(400,200),fontsize=40,color="white")
     elif game_complete:
         screen.fill("yellow")
-        screen.draw.text("Congratulations! You have won\n score:{}/10".format(score),center=(400,200),fontsize=40,color="white")
+        screen.draw.text("Congratulations! You have won\n score:{}/10".format(score),center=(400,200),fontsize=40,color="black")
     else:
         q,a,o=questions[temp]
         random.shuffle(o)
@@ -35,7 +35,7 @@ def draw():
             screen.draw.filled_rect(j,"blue")
             screen.draw.text(o[i],center=j.center,color="white")
 def next():
-    global temp,game_over
+    global temp,game_over,game_complete
     temp=temp+1
     if temp>=len(questions):
         game_complete=True
@@ -51,7 +51,6 @@ def on_mouse_down(pos):
             next()
 
 pgzrun.go()
-            
 
 
 

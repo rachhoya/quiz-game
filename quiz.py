@@ -17,22 +17,39 @@ def load_questions():
 load_questions()
 temp=0
 print(questions)
-coordinates=[Rect((100,220),(200,60)),Rect((400,220),(200,60)),Rect((100,320),(200,60)),Rect((400,320),(200,60))]
+coordinates=[Rect((170,220),(200,60)),Rect((425,220),(200,60)),Rect((170,320),(200,60)),Rect((425,320),(200,60))]
 def draw():
-    screen.fill("Blue")
-    screen.draw.text("Quiz Game",center=(300,50),fontsize=40,color="white")
+    screen.fill("royal blue")
+    screen.draw.text("Quiz Game",center=(400,50),fontsize=40,color="white")
     if game_over:
         screen.fill("red")
-        screen.draw.text("Game Over\n score:{}/10".format(score),center=(300,200),fontsize=40,color="white")
+        screen.draw.text("Game Over\n score:{}/10".format(score),center=(400,200),fontsize=40,color="white")
     elif game_complete:
         screen.fill("yellow")
-        screen.draw.text("Congratulations! You have won\n score:{}/10".format(score),center=(300,200),fontsize=40,color="white")
+        screen.draw.text("Congratulations! You have won\n score:{}/10".format(score),center=(400,200),fontsize=40,color="white")
     else:
         q,a,o=questions[temp]
-        screen.draw.text(q,center=(300,200),fontsize=30,color="white")
+        random.shuffle(o)
+        screen.draw.text(q,center=(400,150),fontsize=30,color="white")
         for i,j in enumerate(coordinates):
-            screen.draw.filled_rect(j,"light blue")
+            screen.draw.filled_rect(j,"blue")
             screen.draw.text(o[i],center=j.center,color="white")
+def next():
+    global temp,game_over
+    temp=temp+1
+    if temp>=len(questions):
+        game_complete=True
+def on_mouse_down(pos):
+    global score,game_over
+    q,a,o=questions[temp]
+    for i,j in enumerate(coordinates):
+        if j.collidepoint(pos):
+            if o[i]==a:
+                score=score+1
+            else:
+                game_over=True
+            next()
+
 pgzrun.go()
             
 
